@@ -28,3 +28,7 @@ svclassifier = SVC(kernel='rbf', random_state=0,C=1, gamma=0.01) #accuracy incre
 svclassifier.fit(X_train, y_train)
 
 y_pred = svclassifier.predict(X_test)
+
+from sklearn.metrics import classification_report, confusion_matrix
+print(confusion_matrix(y_test,y_pred))
+print(classification_report(y_test,y_pred))
