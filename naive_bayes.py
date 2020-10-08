@@ -17,3 +17,24 @@ play_tennis['Wind'] = number.fit_transform(play_tennis['Wind'])
 play_tennis['Play Tennis'] = number.fit_transform(play_tennis['Play Tennis'])
 
 print(play_tennis)
+
+features = ["Outlook","Temperature"]
+target = "Play Tennis"
+
+features_train, features_test, target_train, target_test = train_test_split(play_tennis[features], play_tennis[target], test_size = 0.33, random_state = 54)
+
+features_train
+
+features_test
+
+model = GaussianNB()
+model.fit(features_train, target_train)
+
+pred = model.predict(features_test)
+accuracy = accuracy_score(target_test, pred)
+
+print(accuracy)
+
+print(model.predict([[2,1]]))
+
+#ans 0 implies 0=> 'No'
