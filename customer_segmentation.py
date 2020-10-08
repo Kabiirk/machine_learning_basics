@@ -70,3 +70,34 @@ sns.scatterplot('Age', 'Spending Score (1-100)', hue='Genre', data=data, palette
 plt.title('Age to Spending Score, Colored by Gender');
 
 sns.heatmap(.corr(), annot=True,)
+
+from sklearn.cluster import KMeans
+import seaborn as sns
+
+#CREATING A KMEANS OBJECT
+km = KMeans(n_clusters=3)
+km
+
+#PREDICTING CLUSTERS FOR EACH POINT
+y_predicted = km.fit_predict(data[['Age', 'Spending Score (1-100)']])
+
+#ADDING CLUSTERS OF EACH POINT TO DATAFRAME FOR EASE OF PLOTTING
+data['cluster'] = y_predicted
+
+data.head()
+
+#CENTROID FOR EACH CLUSTER
+km.cluster_centers_
+
+#SEPARATING CLUSTERS INTO THEIR SEPARATE DATAFRAMES FOR BETTER PLOTTING
+df0 = data[data.cluster == 0]
+df1 = data[data.cluster == 1]
+df2 = data[data.cluster == 2]
+
+plt.scatter(df0['Age'], df0['Spending Score (1-100)'], color='red')
+plt.scatter(df1['Age'], df1['Spending Score (1-100)'], color='green')
+plt.scatter(df2['Age'], df2['Spending Score (1-100)'], color='blue')
+plt.scatter(km.cluster_centers_[:,0], km.cluster_centers_[:,1], color='yellow', marker='o', label='centroid', s=200)
+plt.xlabel('Age')
+plt.ylabel('Spending Score')
+plt.legend(['Cluster1', 'Cluster2', 'Cluster3', 'centroid'])
