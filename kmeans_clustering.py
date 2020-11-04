@@ -8,7 +8,7 @@ from sklearn import metrics
 X = np.loadtxt('data_clustering.txt', delimiter=',')
 '''
 #Load data_quality.txt
-X = np.loadtxt('data_quality.txt', delimiter=',')
+X = np.loadtxt('datasets/data_clustering.txt', delimiter=',')
 num_clusters = 6
 
 # Plot input data
