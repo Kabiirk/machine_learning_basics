@@ -5,7 +5,7 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 
-play_tennis = pd.read_csv("PlayTennis.csv")
+play_tennis = pd.read_csv("datasets/PlayTennis.csv")
 
 play_tennis
 
