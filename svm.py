@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 # %matplotlib inline
 
 #File deleted after each runtime, upload data_banknote_authentication.txt again if necessarry
-bankdata = pd.read_csv("data_banknote_authentication.txt")
+bankdata = pd.read_csv("datasets/data_banknote_authentication.txt")
 
 print(bankdata.shape)
 print(bankdata.head())
@@ -15,7 +15,7 @@ y = bankdata['Class']
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.30)
 
-y_test.shape
+print(y_test.shape)
 
 from sklearn.svm import SVC
 svclassifier = SVC(kernel='linear')
