@@ -4,7 +4,7 @@ import sklearn.metrics as sm
 import matplotlib.pyplot as plt
 import pandas as pd
 
-mydata = pd.read_excel("my_data1.xls")
+mydata = pd.read_excel("datasets/my_data1.xls")
 
 print(mydata.head())
 
