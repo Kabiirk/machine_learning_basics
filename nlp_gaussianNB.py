@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
  
 
 #upload Food_Service.tsv before running
-dataset = pd.read_csv('Food_Service.tsv', delimiter='\t', quoting=3)
+dataset = pd.read_csv('datasets/Food_Service.tsv', delimiter='\t', quoting=3)
  
 
 print(dataset)
