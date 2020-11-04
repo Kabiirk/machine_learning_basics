@@ -3,12 +3,8 @@ import matplotlib.pyplot as plt
 from sklearn.cluster import MeanShift, estimate_bandwidth
 from itertools import cycle
 
-'''
 #Load data_clustering.txt
-X = np.loadtxt('data_clustering.txt', delimiter=',')
-'''
-#Load data_clustering.txt
-X = np.loadtxt('data_quality.txt', delimiter=',')
+X = np.loadtxt('datasets/data_clustering.txt', delimiter=',')
 
 #estimate BW
 bandwidth_X = estimate_bandwidth(X, quantile=0.1, n_samples=len(X))
