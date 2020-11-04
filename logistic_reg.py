@@ -25,10 +25,10 @@ print(pred_class)
 pred_class_prob=classifier.predict_proba(np.array([[5.0, 4.3]]))
 print(pred_class_prob*100)
 
-df1 = pd.read_csv('data_decision_trees.txt', sep=",", header=None)
+df1 = pd.read_csv('datasets/data_decision_trees.txt', sep=",", header=None)
 
 #UPLOAD THE FILE AGAIN !!
-df2 = pd.read_csv('data_decision_trees.txt', sep=",", header=None)
+df2 = pd.read_csv('datasets/data_decision_trees.txt', sep=",", header=None)
 
 import pickle
 input_file = "data_singlevar_regr.txt"
